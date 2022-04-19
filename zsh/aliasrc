@@ -1,0 +1,9 @@
+# aliases
+alias vim="nvim"
+alias cspm-management="cd $HOME/Desktop/Security/cspm-management && yarn && yarn dev"
+alias cspm-web="cd $HOME/Desktop/Security/cspm-web && yarn && yarn dev"
+
+alias l="exa"
+alias ls="exa"
+alias ll="exa -l"
+alias lll="exa -la"
