@@ -26,9 +26,18 @@ let g:rustfmt_emit_files = 1
 let g:rustfmt_fail_silently = 0
 let g:rust_clip_command = 'xclip -selection clipboard'
 
+" Enable Color Scheme
 colorscheme dracula
+
+" Tabs and Line Numbers
 set tabstop=4
 set shiftwidth=4
 set number
+
+" Permanent undo
+set undodir=~/.vimdid
+set undofile
+
+" Syntax Detection
 filetype plugin indent on
 syntax enable
