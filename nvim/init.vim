@@ -4,6 +4,7 @@ call plug#begin()
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}	"TS-Server, JSON-Server, Etc. launcher
 "Plug 'preservim/nerdtree' "File Tree Widgets
 Plug 'ctrlpvim/ctrlp.vim' "Fuzzy file search
+Plug 'itchyny/lightline.vim' "VS Code like line below
 
 "Syntaxes
 Plug 'HerringtonDarkholme/yats.vim'	"TS Syntax
@@ -19,6 +20,7 @@ noremap <leader>/ :Commentary<cr>
 
 let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-rust-analyzer', 'coc-emmet', 'coc-tslint', 'coc-prettier']
 let g:dracula_colorterm = 0
+let g:lightline = { 'colorscheme': 'dracula' }
 
 " rust
 let g:rustfmt_autosave = 1
