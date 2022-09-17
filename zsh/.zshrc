@@ -32,6 +32,9 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
+# Prevent brew auto update
+HOMEBREW_NO_AUTO_UPDATE=1
+
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/zsh/shortcutrc" ] && source "$HOME/.config/zsh/shortcutrc"
 [ -f "$HOME/.config/zsh/aliasrc" ] && source "$HOME/.config/zsh/aliasrc"
