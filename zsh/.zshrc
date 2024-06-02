@@ -35,6 +35,9 @@ _comp_options+=(globdots)		# Include hidden files.
 # Prevent brew auto update
 HOMEBREW_NO_AUTO_UPDATE=1
 
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
+
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/zsh/shortcutrc" ] && source "$HOME/.config/zsh/shortcutrc"
 [ -f "$HOME/.config/zsh/aliasrc" ] && source "$HOME/.config/zsh/aliasrc"
