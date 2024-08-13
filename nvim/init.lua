@@ -568,7 +568,60 @@ require('lazy').setup({
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
-        -- rust_analyzer = {},
+        rust_analyzer = {
+          settings = {
+            ['rust-analyzer'] = {
+              cargo = {
+                features = { 'ssr' }, -- features = ssr, for LSP support in leptos SSR functions
+              },
+            },
+          },
+        },
+        tailwindcss = {
+          filetypes = {
+            'css',
+            'scss',
+            'sass',
+            'postcss',
+            'html',
+            'javascript',
+            'javascriptreact',
+            'typescript',
+            'typescriptreact',
+            'svelte',
+            'vue',
+            'rust',
+            'rs',
+          },
+          init_options = {
+            -- There you can set languages to be considered as different ones by tailwind lsp I guess same as includeLanguages in VSCod
+            userLanguages = {
+              rust = 'html',
+            },
+          },
+          settings = {
+            tailwindCSS = {
+              classAttributes = { 'class', 'className', 'class:list', 'classList', 'ngClass' },
+              includeLanguages = {
+                eelixir = 'html-eex',
+                eruby = 'erb',
+                htmlangular = 'html',
+                templ = 'html',
+                rust = 'html',
+              },
+              lint = {
+                cssConflict = 'warning',
+                invalidApply = 'error',
+                invalidConfigPath = 'error',
+                invalidScreen = 'error',
+                invalidTailwindDirective = 'error',
+                invalidVariant = 'error',
+                recommendedVariantOrder = 'warning',
+              },
+              validate = true,
+            },
+          },
+        },
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
