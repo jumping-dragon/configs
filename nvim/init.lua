@@ -579,8 +579,23 @@ require('lazy').setup({
         rust_analyzer = {
           settings = {
             ['rust-analyzer'] = {
+              checkOnSave = {
+                command = 'clippy',
+              },
               cargo = {
-                features = { 'ssr' }, -- features = ssr, for LSP support in leptos SSR functions
+                features = { 'ssr' },
+              },
+              procMacro = {
+                ignored = {
+                  leptos_macro = {
+                    -- optional: --
+                    -- "component",
+                    'server',
+                  },
+                },
+              },
+              rustfmt = {
+                overrideCommand = { 'leptosfmt', '--stdin', '--rustfmt' },
               },
             },
           },
