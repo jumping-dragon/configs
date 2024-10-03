@@ -620,6 +620,8 @@ require('lazy').setup({
             -- There you can set languages to be considered as different ones by tailwind lsp I guess same as includeLanguages in VSCod
             userLanguages = {
               rust = 'html',
+              typescriptreact = 'html',
+              javascriptreact = 'html',
             },
           },
           settings = {
@@ -631,6 +633,8 @@ require('lazy').setup({
                 htmlangular = 'html',
                 templ = 'html',
                 rust = 'html',
+                typescriptreact = 'html',
+                javascriptreact = 'html',
               },
               lint = {
                 cssConflict = 'warning',
