@@ -1027,6 +1027,26 @@ require('lazy').setup({
       --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     end,
   },
+  {
+    'kevinhwang91/nvim-ufo',
+    dependencies = { 'kevinhwang91/promise-async' },
+    config = function()
+      vim.o.foldcolumn = '0' -- '0' is not bad
+      vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+      vim.o.foldlevelstart = 99
+      vim.o.foldenable = true
+
+      -- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
+      vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
+      vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+
+      require('ufo').setup {
+        provider_selector = function(bufnr, filetype, buftype)
+          return { 'treesitter', 'indent' }
+        end,
+      }
+    end,
+  },
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
