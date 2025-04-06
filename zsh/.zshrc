@@ -46,3 +46,8 @@ bindkey "^[[1;3D" backward-word
 
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Swap capslock and escape if running gnome
+if type "gsettings" > /dev/null; then
+gsettings set org.gnome.desktop.input-sources xkb-options "['caps:swapescape']"
+fi
