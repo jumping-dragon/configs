@@ -1,7 +1,7 @@
 if vim.g.neovide then
   -- scale_factor
   -- vim.g.neovide_scale_factor = 0.7
-  vim.g.neovide_transparency = 0.8
+  vim.g.neovide_opacity = 0.8
   vim.g.neovide_cursor_vfx_mode = 'pixiedust'
   vim.g.neovide_cursor_vfx_particle_density = 100.0
   vim.g.neovide_cursor_vfx_particle_lifetime = 4.0
